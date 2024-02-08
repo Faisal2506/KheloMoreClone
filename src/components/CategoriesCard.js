@@ -7,11 +7,11 @@ import {
 
 const CategoriesCard = (props)=>{
   return(
-    <View style={styles.titleContainer}>
-      <Text style={styles.titleText}>
+    <TouchableOpacity style={[styles.titleContainer, props.isFocused && styles.focusedContainer]} onPress={props.onPress}>
+      <Text style={[styles.titleText,props.isFocused && styles.focusedText]}>
         {props.title}
       </Text> 
-    </View>
+    </TouchableOpacity>
     )
 }
 
@@ -19,15 +19,23 @@ export default CategoriesCard;
 
 const styles = StyleSheet.create({
   titleContainer: {
-    borderWidth:1,
+    borderWidth:0.3,
     borderColor:'#999',
     borderRadius: wp(4),
     width:'auto',
-    height: hp(4),
-    padding: hp(0.5)
+    height: hp(4.2),
+    padding: hp(0.5),
+    paddingLeft:wp(3),
+    paddingRight:wp(3),
   },
   titleText: {
-    color:'#000', 
-    fontSize: hp(2)
+    fontSize: hp(2),
+    color:'#000'
+  },
+  focusedText: {
+    color:'#fff'
+  },
+  focusedContainer: {
+    backgroundColor: '#FC2E20',
   }
 })

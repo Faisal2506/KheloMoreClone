@@ -27,7 +27,7 @@ const screenOptions =() => {
       right: 0,
       bottom: 0,
       elevation: 0,
-      backgroundColor: 'transparent',
+      backgroundColor: '#fff',
       height: 60,
     },
     tabBarLabelStyle: {

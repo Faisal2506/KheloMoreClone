@@ -21,9 +21,9 @@ import { AntDesign, FontAwesome5, Octions } from "react-native-vector-icons";
 // import { homeSlider } from '../constants';
 import HomeSlider from "../components/HomeSlider";
 import TopBar from "../components/TopBar";
-import Categories from "../components/Categories";
+import Categories from "../components/CategoriesCard";
 import { categories } from "../constants/caterogies";
-import CategoriesCard from "../components/Categories";
+import CategoriesCard from "../components/CategoriesCard";
 import { turfImages } from "../constants/turf";
 import Places from "../components/Places";
 // import { turfImages } from '../constants/turf';
@@ -38,7 +38,10 @@ const Home = () => {
   React.useEffect(() => {
     handleAddressClick();
   }, []);
-  const renderItem = () => <CategoriesCard />;
+  const [focusedCategory, setFocusedCategory] = React.useState(categories[0].index)
+  const handleCategoryPress = (index) => {
+    setFocusedCategory(index);
+  }
   return (
     <SafeAreaView style={styles.mainContainer}>
       <AdressModal
@@ -70,8 +73,12 @@ const Home = () => {
             keyExtractor={(key) => {
               return key.index.toString();
             }}
-            renderItem={({ item }) => <CategoriesCard title={item.name} />}
+            renderItem={({ item }) => <CategoriesCard title={item.name} 
+              onPress={()=>handleCategoryPress(item.index)}
+              isFocused = {focusedCategory===item.index}
+            />}
             horizontal={true}
+            showsHorizontalScrollIndicator={false}
           />
         </View>
       </View>
@@ -79,11 +86,7 @@ const Home = () => {
         <FlatList 
           data={turfImages}
           renderItem={({item}) => <Places title={item.title} sportsAvailable={item.sportsAvailable} address={item.address} picture={item.picture}/>}
-          // horizontal={false}
-          vertical={true}
-          contentContainerStyle={{
-            flexGrow: 1,
-                }}
+          horizontal={false}
         />
       </View>
     </SafeAreaView>
@@ -96,6 +99,7 @@ const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     backgroundColor: "#fff",
+    marginBottom: 60
   },
 
   sliderContainer: {
