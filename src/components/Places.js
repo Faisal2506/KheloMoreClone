@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { turfImages } from '../constants/turf'
+// import { turfImages } from '../constants/turf'
 
 const Places = ({title, picture, sportsAvailable, address}) => {
   return (

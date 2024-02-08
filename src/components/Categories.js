@@ -5,22 +5,26 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-const CategoriesCard =({title})=>{
+const CategoriesCard = (props)=>{
+  return(
     <View style={styles.titleContainer}>
       <Text style={styles.titleText}>
-        {title}
-      </Text>
+        {props.title}
+      </Text> 
     </View>
+    )
 }
 
-export default CategoriesCard
+export default CategoriesCard;
 
 const styles = StyleSheet.create({
   titleContainer: {
     borderWidth:1,
     borderColor:'#999',
-    borderRadius: wp(2),
-    width:wp(4),
+    borderRadius: wp(4),
+    width:'auto',
+    height: hp(4),
+    padding: hp(0.5)
   },
   titleText: {
     color:'#000', 

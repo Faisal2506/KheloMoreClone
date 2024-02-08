@@ -7,7 +7,7 @@ export const categories = [
     index: '2',
     name:'Football'
   },
-  {
+  { 
     index: '3',
     name:'Box Cricket'
   },
