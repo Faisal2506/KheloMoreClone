@@ -5,6 +5,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {MaterialCommunityIcons, Entypo} from 'react-native-vector-icons';
+import MoreSection from '../components/MoreSection1';
 const More = () => {
   return (
     <SafeAreaView style={styles.mainContainer}>
@@ -55,22 +56,15 @@ const More = () => {
       </View>
       </ImageBackground>
       </View>
-      <ScrollView style={styles.profileScroll}>
+      <ScrollView style={styles.profileScroll} showsVerticalScrollIndicator={false}>
         <View style={styles.profileCompletionContainer}>
           <Text style={styles.profileCompletionText}>
             Profile completion: 10%
           </Text>
         </View>
-        <View style={styles.passContainer}>
-          <View>
-            <Entypo 
-              name="ticket" size={10}
-            />
-            <Text>Your Bookings</Text>
+        <View style={{marginTop:hp(1.5)}}>
+          <MoreSection />
           </View>
-          <View><Text>Favourite Venues</Text></View>
-          <View><Text>Your KheloMore Pass</Text></View>
-        </View>
       </ScrollView>
     </SafeAreaView>
   )
@@ -81,7 +75,8 @@ export default More;
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    marginBottom:60
   },
   profileTop: {
     flexDirection: 'row',
@@ -155,7 +150,7 @@ const styles = StyleSheet.create({
     paddingTop: hp(2),
     height: hp(10),
     borderRadius: hp(2),
-    // elevation: 100,
+    elevation: 1,
     backgroundColor: '#fff',
     zIndex:2
   },
@@ -191,7 +186,7 @@ const styles = StyleSheet.create({
   },
   profileScroll: {
     marginTop:hp(28),
-    backgroundColor:'#999',
+    backgroundColor:'#fff',
     paddingTop: 60,
     borderTopRightRadius:10,
     borderTopLeftRadius:10,
@@ -204,6 +199,7 @@ const styles = StyleSheet.create({
     paddingLeft: wp(2),
     paddingTop: hp(2),
     borderRadius: hp(2),
+    marginBottom:hp(1.5)
   },
   passContainer:{
     borderWidth:1,
