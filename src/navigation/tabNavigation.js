@@ -29,6 +29,7 @@ const screenOptions =() => {
       elevation: 0,
       backgroundColor: '#fff',
       height: 60,
+      zIndex:2,
     },
     tabBarLabelStyle: {
       fontSize: 10,

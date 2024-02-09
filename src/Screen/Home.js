@@ -18,10 +18,10 @@ import {
 } from "react-native-responsive-screen";
 import AdressModal from "../components/AdressModal";
 import { AntDesign, FontAwesome5, Octions } from "react-native-vector-icons";
-// import { homeSlider } from '../constants';
+import { homeSliderImages } from '../constants';
 import HomeSlider from "../components/HomeSlider";
 import TopBar from "../components/TopBar";
-import Categories from "../components/CategoriesCard";
+// import Categories from "../components/CategoriesCard";
 import { categories } from "../constants/caterogies";
 import CategoriesCard from "../components/CategoriesCard";
 import { turfImages } from "../constants/turf";
@@ -50,7 +50,9 @@ const Home = () => {
       />
       <TopBar />
       <View style={styles.sliderContainer}>
-        <HomeSlider />
+        <HomeSlider 
+          data={homeSliderImages}
+        />
       </View>
       <View style={styles.availableTitle}>
         <Text style={styles.availableText}>
@@ -132,6 +134,7 @@ const styles = StyleSheet.create({
     // borderColor: 'red',
     alignItems: "center",
     flexDirection: "row",
+    marginBottom: hp(1)
   },
   dateContainer: {
     marginLeft: wp(2),

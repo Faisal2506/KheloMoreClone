@@ -5,12 +5,12 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-import { homeSlider } from '../constants';
 
-export default function ImageSlider() {
+
+export default function HomeSlider({data}) {
   return (
     <Carousel
-      data={homeSlider}
+      data={data}
       loop={true}
       autoplay={true}
       renderItem={ItemCard}
@@ -26,7 +26,7 @@ export default function ImageSlider() {
 
 const ItemCard = ({ item, index }, parallaxProps) => {
   return (
-    <View style={{ width: wp(100) - 70, height: 150 }}>
+    <View style={{ width: wp(100) -80, height: 150 }}>
       <ParallaxImage
         source={item}
         key={index}

@@ -24,7 +24,7 @@ export default function ImageSlider() {
   );
 }
 
-const ItemCard = ({ item, index }, parallaxProps) => {
+const ItemCard = ({ item, index, style }, parallaxProps) => {
   return (
     <View style={{ width: wp(100) - 70, height: hp(60) }}>
       <ParallaxImage

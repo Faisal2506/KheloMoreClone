@@ -22,7 +22,6 @@ const OnBoarding = () => {
     <View style={styles.container}>
       <ImageSlider 
         data={sliderImages}
-        // height={60}
       />
       <View style={{marginTop: 0}}>
       <Text style={styles.heading}>Book Sport Venue</Text>
