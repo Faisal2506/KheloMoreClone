@@ -33,8 +33,8 @@ const Coaching = () => {
     />
     </View>
     <View style={styles.availableContainer}>
-      <Text>Available Societies/Academics{'  '}<Text>[41]</Text></Text>
-      <Text style={styles.viewAllText}>VIEW ALL</Text>
+      <Text style={styles.availableText}>Available Societies/Academics{'  '}<Text style={{fontWeight:'normal'}}>[41]</Text></Text>
+      <Text style={[styles.availableText,{color:'#FC2E20'}]}>VIEW ALL</Text>
     </View>
     </ScrollView>
     </SafeAreaView>
@@ -52,6 +52,12 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     justifyContent:'space-between',
     borderWidth:1,
-    marginTop:hp(2)
+    marginTop:hp(6),
+    paddingLeft:wp(3),
+    paddingRight:wp(3)
+  },
+  availableText:{
+    fontSize:hp(2),
+    fontWeight:'bold'
   }
 })
