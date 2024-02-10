@@ -17,7 +17,7 @@ export const kits = [
   {
     key: '4',
     picture:require('../../assets/images/swimmingKit.jpg'),
-    title:"Tennis"
+    title:"Swimming"
   },
   {
     key: '5',

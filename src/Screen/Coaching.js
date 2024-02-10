@@ -135,8 +135,8 @@ const styles = StyleSheet.create({
   },
   kitContainer: {
     padding: 4,
-    borderWidth: 1,
-    borderColor: 'red',
+    // borderWidth: 1,
+    // borderColor: 'red',
     marginTop: hp(3),
     paddingLeft: wp(3),
     paddingRight: wp(3),
