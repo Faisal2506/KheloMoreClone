@@ -3,12 +3,16 @@ import React from 'react'
 
 const Leaderboard = () => {
   return (
-    <View>
-      <Text>Leaderboard</Text>
-    </View>
+    <SafeAreaView style={styles.mainContainer}>
+      
+    </SafeAreaView>
   )
 }
 
 export default Leaderboard
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  mainContainer:{
+    flex:1
+  }
+})
