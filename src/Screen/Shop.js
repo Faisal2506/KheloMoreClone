@@ -11,6 +11,8 @@ import { MaterialCommunityIcons } from 'react-native-vector-icons';
 import FrequentSlider from '../components/FrequentSlider';
 import { frequentImages } from '../constants/frequent';
 import ViewAll from '../components/ViewAll';
+import BestSelling from '../components/BestSelling';
+import { bestSelling } from '../constants/bestSelliingCricket';
 
 const Shop = () => {
   const [drawerVisible, setDrawerVisible] = React.useState(false)
@@ -99,6 +101,12 @@ const Shop = () => {
           />
         </View>
         <ViewAll title={"Best Selling Cricket"} description="We're trying to make your cricket shopping easier" />
+   
+          <FlatList 
+            data={bestSelling}
+            renderItem={({item}) => <BestSelling picture={item.picture} description={item.description} price={item.price} />} 
+            numColumns={2}
+          />
       </ScrollView>
     </SafeAreaView>
   )

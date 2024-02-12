@@ -4,7 +4,6 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
-import { MaterialCommunityIcons } from 'react-native-vector-icons';
 
 const ViewAll = ({title,description}) => {
   return (
