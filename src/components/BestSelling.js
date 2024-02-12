@@ -10,8 +10,7 @@ const BestSelling = ({ picture,description,price }) => {
   return (
     <View style={styles.mainContaier}>
 
-        <View style={{
-          borderWidth: 0.2, borderColor: 'red',marginBottom:wp(1)
+        <View style={{marginBottom:wp(1)
         }}>
           <Image
             source={picture}
@@ -28,17 +27,17 @@ const BestSelling = ({ picture,description,price }) => {
         <View>
           <Text>{description}</Text>
         </View>
-        {/* <View style={styles.priceContainer}>
+        <View style={styles.priceContainer}>
           <Text>{price}</Text>
           <View style={styles.addContainer}>
             <Ionicons 
               name="bag-outline"
-              size={10}
+              size={14}
               color="#0096FF"
             />
-            <Text>ADD</Text>
+            <Text style={styles.addText}>ADD</Text>
           </View>
-        </View> */}
+        </View>
     </View>
   )
 }
@@ -50,7 +49,6 @@ const styles = StyleSheet.create({
     marginHorizontal: wp(3),
     height: hp(35),
     width: wp(45),
-    borderWidth:1
   },
   productImage: {
     height: hp(25),
@@ -88,10 +86,24 @@ const styles = StyleSheet.create({
     color:'#fff'
   },
   priceContainer:{
-    marginTop:wp(3)
+    marginTop:wp(3),
+    flexDirection:'row',
+    justifyContent:'space-between'
   },
   addContainer:{
-    flexDirection:1,
-
+    flexDirection:'row',
+    borderWidth:1,
+    borderColor:"#0096FF",
+    width:wp(16),
+    height:hp(3),
+    borderRadius:wp(1),
+    paddingHorizontal:wp(1),
+    alignItems:'center',
+    justifyContent:'space-between',
+    marginRight:wp(1)
+  },
+  addText:{
+    fontWeight:'bold',
+    color:"#0096FF"
   }
 })

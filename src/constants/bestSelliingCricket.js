@@ -22,5 +22,5 @@ export const bestSelling =[
     picture:require('../../assets/images/bestSelling04.jpg'),
     description: "DSC Wildfire Volcano Tennis Cricket Bat",
     price:"₹1,999"
-  }
+  },
 ]
