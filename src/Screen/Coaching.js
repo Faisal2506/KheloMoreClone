@@ -26,6 +26,7 @@ const Coaching = () => {
   return (
     <SafeAreaView style={styles.mainContainer}>
       <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <CityModal
           modalVisible={cityModalVisible}
           toggleModal={handleClick}
@@ -59,6 +60,7 @@ const Coaching = () => {
             data={kits}
             renderItem={({ item }) => <SportsKit picture={item.picture} title={item.title} />}
             numColumns={3}
+            showsVerticalScrollIndicator={false}
           />
         </View>
         <View style={styles.kheloMoreCorner}>
@@ -159,7 +161,7 @@ const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     marginBottom: 60,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
   },
   availableContainer: {
     flex: 1,
@@ -183,6 +185,7 @@ const styles = StyleSheet.create({
     marginTop: hp(3),
     paddingLeft: wp(3),
     paddingRight: wp(3),
+    borderRadius:wp(2)
   },
   kitTitleContainer: {
     flexDirection: 'row',
