@@ -26,7 +26,6 @@ const Coaching = () => {
   return (
     <SafeAreaView style={styles.mainContainer}>
       <ScrollView showsVerticalScrollIndicator={false}>
-      <ScrollView showsVerticalScrollIndicator={false}>
         <CityModal
           modalVisible={cityModalVisible}
           toggleModal={handleClick}
