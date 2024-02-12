@@ -14,7 +14,7 @@ import { availableLocations } from '../constants/AvailableLocation';
 import AvailableAcademies from '../components/AvailableAcademies';
 import SportsKit from '../components/SportsKit';
 import { kits } from '../constants/kits';
-import { AntDesign } from 'react-native-vector-icons';
+import { AntDesign, Ionicons } from 'react-native-vector-icons';
 const Coaching = () => {
   const [cityModalVisible, setCityModalVisible] = React.useState(false)
   const handleClick = () => {
@@ -25,7 +25,7 @@ const Coaching = () => {
   }, [])
   return (
     <SafeAreaView style={styles.mainContainer}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <CityModal
           modalVisible={cityModalVisible}
           toggleModal={handleClick}
@@ -41,7 +41,7 @@ const Coaching = () => {
           <Text style={styles.availableText}>Available Societies/Academics{'  '}<Text style={{ fontWeight: 'normal' }}>[41]</Text></Text>
           <Text style={[styles.availableText, { color: '#FC2E20' }]}>VIEW ALL</Text>
         </View>
-        {/* <AvailableAcademies title={"Bhartiya City Nikoo Home 1"}/> */}
+        {/* <AvailableAcadem74ies title={"Bhartiya City Nikoo Home 1"}/> */}
         <View style={{ flex: 1 }}>
           <FlatList
             data={availableLocations}
@@ -61,49 +61,90 @@ const Coaching = () => {
             numColumns={3}
           />
         </View>
+        <View style={styles.kheloMoreCorner}>
+          <View style={styles.cornerTitleContainer}><Text style={styles.cornerTitle}>KheloMore Corner </Text></View>
+          <ScrollView style={styles.cornerLinks} horizontal={true} showsHorizontalScrollIndicator={false}>
+            <View style={styles.cornerContainer}>
+              <TouchableOpacity style={styles.cornerImageContainer}> 
+                <Image source={require('../../assets/images/cornerImage.jpg')} style={styles.cornerImage}/> 
+              </TouchableOpacity>
+              <View style={{flexDirection:'row',alignItems:'center'}}>
+                <AntDesign 
+                  name="playcircleo"
+                  size={hp(2)}
+                  color="#FC2E20"
+                />
+                <View style={{marginLeft:wp(2)}}>
+                <Text style={styles.cornerImageTitle}>
+                  Kids Fitness at Lodha NCP
+                </Text>
+                <Text style={styles.cornerImageDescription}>Watch the parents talk about Kids and their fitness</Text>
+                </View>
+              </View>
+            </View>
+            <View style={styles.cornerContainer}>
+              <TouchableOpacity  style={styles.cornerImageContainer}> 
+                <Image source={require('../../assets/images/chessImage.jpg')} style={styles.cornerImage}/> 
+              </TouchableOpacity>
+              <View style={{flexDirection:'row',alignItems:'center'}}>
+              <Ionicons 
+                  name="document-text-outline"
+                  size={hp(2)}
+                  color="#FC2E20"
+                />
+                <View style={{marginLeft:wp(2)}}>
+                <Text style={styles.cornerImageTitle}>
+                  Interactive online Chess Coaching ft. KheloMore
+                </Text>
+                <Text style={styles.cornerImageDescription}>Kids at their best</Text>
+                </View>
+                </View>
+            </View>
+          </ScrollView>
+        </View>
         <View style={styles.registerCard}>
           <View>
-            <Text style={[styles.text,styles.heading]}>REGISTER YOUR SOCIETY</Text>
-            <Text style={[styles.text, {fontSize:hp(1.4),marginBottom:hp(1)}]}>for residential sports coaching</Text>
-            <View style={{flexDirection:'row',alignItems:'center'}}>
-            <AntDesign 
-              name="rightcircle"
-              size={10}
-              color="#fff"
-            />
-            <Text style={styles.text}>{"\t"}Ceritified Sport Coaches</Text>
+            <Text style={[styles.text, styles.heading]}>REGISTER YOUR SOCIETY</Text>
+            <Text style={[styles.text, { fontSize: hp(1.4), marginBottom: hp(1) }]}>for residential sports coaching</Text>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <AntDesign
+                name="rightcircle"
+                size={10}
+                color="#fff"
+              />
+              <Text style={styles.text}>{"\t"}Ceritified Sport Coaches</Text>
             </View>
-            <View style={{flexDirection:'row',alignItems:'center'}}>
-            <AntDesign 
-              name="rightcircle"
-              size={10}
-              color="#fff"
-            />
-            <Text style={[styles.text,]}>{"\t"}Coaching at your Residence</Text>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <AntDesign
+                name="rightcircle"
+                size={10}
+                color="#fff"
+              />
+              <Text style={[styles.text,]}>{"\t"}Coaching at your Residence</Text>
             </View>
-            <View style={{flexDirection:'row',alignItems:'center'}}>
-            <AntDesign 
-              name="rightcircle"
-              size={10}
-              color="#fff"
-            />
-            <Text style={styles.text}>{"\t"}Unlock your Potential</Text>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <AntDesign
+                name="rightcircle"
+                size={10}
+                color="#fff"
+              />
+              <Text style={styles.text}>{"\t"}Unlock your Potential</Text>
             </View>
-            <View style={{flexDirection:'row',alignItems:'center'}}>
-            <AntDesign 
-              name="rightcircle"
-              size={10}
-              color="#fff"
-            />
-            <Text style={styles.text}>{"\t"}Avail Best Prices</Text>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <AntDesign
+                name="rightcircle"
+                size={10}
+                color="#fff"
+              />
+              <Text style={styles.text}>{"\t"}Avail Best Prices</Text>
             </View>
           </View>
-          <View style={{justifyContent:'space-between'}}>
-            <Image 
+          <View style={{ justifyContent: 'space-between' }}>
+            <Image
               source={require('../../assets/images/register.jpg')} style={styles.registerImage}
             />
             <TouchableOpacity style={styles.registerButton}>
-            <Text style={[styles.text,{fontSize:hp(1.4),color:"#000",fontWeight:'bold'}]}>REGISTER TODAY</Text>
+              <Text style={[styles.text, { fontSize: hp(1.4), color: "#000", fontWeight: 'bold' }]}>REGISTER TODAY</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -135,8 +176,10 @@ const styles = StyleSheet.create({
   },
   kitContainer: {
     padding: 4,
-    // borderWidth: 1,
-    // borderColor: 'red',
+    borderWidth: 0.19,
+    marginHorizontal: wp(2),
+    borderRadius: wp(3),
+    borderColor: '#999',
     marginTop: hp(3),
     paddingLeft: wp(3),
     paddingRight: wp(3),
@@ -151,40 +194,73 @@ const styles = StyleSheet.create({
     fontSize: hp(2),
     fontWeight: 'bold'
   },
-  registerCard:{
-    flex:1,
-    borderWidth:1,
-    padding:wp(3),
-    justifyContent:'space-between',
-    flexDirection:'row',
-    backgroundColor:'#000',
-    margin:wp(3.5),
-    borderRadius:wp(4),
-    height:hp(18)
+  registerCard: {
+    flex: 1,
+    borderWidth: 1,
+    padding: wp(3),
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    backgroundColor: '#000',
+    margin: wp(3.5),
+    borderRadius: wp(4),
+    height: hp(18)
   },
-  text:{
-    color:"#fff",
-    fontSize:hp(1.2),
-    lineHeight:hp(2.2)
+  text: {
+    color: "#fff",
+    fontSize: hp(1.2),
+    lineHeight: hp(2.2)
   },
-  heading:{
-    fontSize:hp(1.9),
-    fontWeight:'bold'
+  heading: {
+    fontSize: hp(1.9),
+    fontWeight: 'bold'
   },
-  registerImage:{
-    height:hp(10),
-    width:wp(38),
-    marginBottom:hp(1),
-    borderRadius:wp(4)
+  registerImage: {
+    height: hp(10),
+    width: wp(38),
+    marginBottom: hp(1),
+    borderRadius: wp(4)
   },
-  registerButton:{
-    height:hp(3.5),
-    backgroundColor:'#fff',
-    padding:hp(0.5),
-    justifyContent:'center',
-    width:wp(38),
-    paddingHorizontal:hp(3),
-    marginBottom:hp(2),
-    borderRadius:wp(4)
+  registerButton: {
+    height: hp(3.5),
+    backgroundColor: '#fff',
+    padding: hp(0.5),
+    justifyContent: 'center',
+    width: wp(38),
+    paddingHorizontal: hp(3),
+    marginBottom: hp(2),
+    borderRadius: wp(4)
   },
+  cornerTitleContainer:{
+    paddingHorizontal:wp(3),
+    paddingVertical:hp(2)
+  },
+  cornerTitle:{
+    fontSize:hp(2.2),
+    fontWeight:'bold',
+  },
+  cornerLinks:{
+    // flex:1    
+  },
+  cornerContainer:{
+    width:wp(59),
+    paddingHorizontal:wp(3)
+  },
+  cornerImageContainer:{
+    marginBottom:hp(1)
+  },
+  cornerImage:{
+    borderRadius:wp(5),
+    width:wp(54),
+    resizeMode:'contain'
+  },
+  cornerTextContainer:{
+    
+ },
+ cornerImageTitle:{
+    fontSize:hp(1.8)
+ },
+ cornerImageDescription:{
+  fontSize:10,
+  color:"#999"
+ }
 })

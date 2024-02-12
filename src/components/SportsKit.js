@@ -26,23 +26,26 @@ export default SportsKit
 
 const styles = StyleSheet.create({
   mainContainer:{
-    borderWidth:1,
     marginLeft:wp(3),
     marginRight:wp(3)
   },
   kitCategory:{
-    borderWidth:1,
     height:hp(16),
     width:wp(24.8)
   },
   sportsImageContainer:{
     padding:2,
-    borderWidth:1,
-    height:hp(10),
+    height:hp(12),
     width:wp(20),
+    marginBottom:hp(0.7)
   },
   sportsImage:{
     flex:1,
+    height:hp(10),
+    width:wp(20),
     resizeMode:'contain'
+  },
+  sportsNameText:{
+    alignSelf:'center'
   }
 })
