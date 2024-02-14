@@ -1,4 +1,4 @@
-export const bestSelling =[
+export const bestSellingCricket = [
   {
     key:"1",
     picture:require('../../assets/images/bestSelling01.jpg'),

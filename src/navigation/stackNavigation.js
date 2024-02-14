@@ -15,11 +15,11 @@ const Stack = createStackNavigator();
     <NavigationContainer>
     <Stack.Navigator
     initialRouteName='OnBoardingScreen'>
-      <Stack.Screen name='OnBoardingScreen' component={OnBoarding}/>
-      <Stack.Screen name='LoginScreen' component={Login} />
-      <Stack.Screen name='ReferralScreen' component={Referral} />
-      <Stack.Screen name='OTPScreen' component={OTPVerify} />
-      <Stack.Screen name='DetailsScreen' component={Details} />
+      <Stack.Screen name='OnBoardingScreen' component={OnBoarding} options={{headerShown: false}}/>
+      <Stack.Screen name='LoginScreen' component={Login} options={{headerShown: false}}/>
+      <Stack.Screen name='ReferralScreen' component={Referral} options={{headerShown: false}}/>
+      <Stack.Screen name='OTPScreen' component={OTPVerify} options={{headerShown: false}}/>
+      <Stack.Screen name='DetailsScreen' component={Details} options={{headerShown: false}}/>
       <Stack.Screen name='HomeScreen' component={TabNavigation} options={{headerShown: false}}/>
     </Stack.Navigator>
     </NavigationContainer>

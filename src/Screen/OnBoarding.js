@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 import {
@@ -19,7 +19,7 @@ const OnBoarding = () => {
     navigation.navigate('ReferralScreen')
   }
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ImageSlider 
         data={sliderImages}
       />
@@ -42,7 +42,7 @@ const OnBoarding = () => {
       title ="Start →"
       buttonFunction = {handleStartClick}
       />
-    </View>
+    </SafeAreaView>
   )
 }
 
@@ -52,6 +52,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    marginTop:hp(3)
+
   },
   heading: {
     fontSize: wp(7),

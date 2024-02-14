@@ -12,7 +12,10 @@ import FrequentSlider from '../components/FrequentSlider';
 import { frequentImages } from '../constants/frequent';
 import ViewAll from '../components/ViewAll';
 import BestSelling from '../components/BestSelling';
-import { bestSelling } from '../constants/bestSelliingCricket';
+import { bestSellingCricket } from '../constants/bestSelliingCricket';
+import { explore } from '../constants/explore';
+import ExploreCard from '../components/ExploreCard';
+import { bestSelliingFootball } from '../constants/bestSellingFootball';
 
 const Shop = () => {
   const [drawerVisible, setDrawerVisible] = React.useState(false)
@@ -101,12 +104,26 @@ const Shop = () => {
           />
         </View>
         <ViewAll title={"Best Selling Cricket"} description="We're trying to make your cricket shopping easier" />
-   
           <FlatList 
-            data={bestSelling}
+            data={bestSellingCricket}
             renderItem={({item}) => <BestSelling picture={item.picture} description={item.description} price={item.price} />} 
             numColumns={2}
           />
+        <View style={styles.exploreContainer}>
+          <View style={styles.exploreTitle}>
+            <Text style={styles.exploreTitle}>EXPLORE SPORT COLLECTIONS</Text>
+          </View>
+          <FlatList horizontal showsHorizontalScrollIndicator={false}
+            data={explore}
+            renderItem={({item}) => <ExploreCard title={item.title} type={item.type} bgcolor={item.bgcolor} />}
+          />
+        </View>
+        <ViewAll title={"It's all about Football"} description="The true essence of football is felt with its Kit" />
+        <FlatList 
+          data={bestSelliingFootball}
+          renderItem={({item}) => <BestSelling picture={item.picture} description={item.description} price={item.price}/>}
+          numColumns={2}
+        />
       </ScrollView>
     </SafeAreaView>
   )
@@ -186,24 +203,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold'
   },
-  // frequentContainer: {
-  //   flex: 1,
-  //   flexDirection: 'row',
-  //   justifyContent: 'space-between',
-  //   marginTop: hp(3),
-  //   marginHorizontal: wp(3),
-  // },
-  // frequentTitle: {
-  //   fontSize: 17,
-  //   fontWeight: 'bold',
-  //   marginBottom: hp(1)
-  // },
-  // frequentDesc: {
-  //   fontSize: 12,
-  //   color: '#999'
-  // },
-  viewAll: {
-    fontWeight: 'bold',
-    color: "#0096FF"
+  exploreContainer:{
+    marginTop:hp(6),
+    marginLeft:wp(3)
+  },
+  exploreTitle:{
+    fontSize:16,
+    fontWeight:'bold'
   }
 })

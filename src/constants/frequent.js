@@ -11,7 +11,7 @@ export const frequentImages = [
   },
   {
     heading:"POPULAR",
-    details:"FLashing LED\nCricket Bails",
-    picture:require('../../assets/images/cricketBail.jpg')
+    details:"Nivia Trainer\nFootball ",
+    picture:require('../../assets/images/footballFrequent.jpg')
   },
 ]
