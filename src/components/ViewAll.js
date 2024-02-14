@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginTop: hp(3),
     marginHorizontal: wp(3),
+    marginBottom:wp(4)
   },
   title: {
     fontSize: 17,

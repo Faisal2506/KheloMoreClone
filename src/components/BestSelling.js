@@ -24,6 +24,7 @@ const BestSelling = ({ picture,description,price }) => {
             <AntDesign name="star" size={16} color="#fff" />  
           </View>
         </View>
+        <View style={{justifyContent:'space-around',flex:1}}>
         <View>
           <Text>{description}</Text>
         </View>
@@ -38,6 +39,7 @@ const BestSelling = ({ picture,description,price }) => {
             <Text style={styles.addText}>ADD</Text>
           </View>
         </View>
+        </View>
     </View>
   )
 }
@@ -49,9 +51,10 @@ const styles = StyleSheet.create({
     marginHorizontal: wp(3),
     height: hp(35),
     width: wp(45),
+    marginBottom:wp(1)
   },
   productImage: {
-    height: hp(25),
+    height: hp(22),
     width: wp(45),
     resizeMode: 'contain',
     position: 'relative',
