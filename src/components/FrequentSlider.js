@@ -4,11 +4,9 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
-import { frequentImages } from '../constants/frequent';
 import { FontAwesome6, AntDesign } from 'react-native-vector-icons';
-import { width } from 'deprecated-react-native-prop-types/DeprecatedImagePropType';
 
-const FrequentSlider = ({picture, heading,details}) => {
+const FrequentSlider = ({picture, heading,details,bgColor}) => {
   return (
       <View style={styles.frequentCard}>
         <ImageBackground source={picture} style={styles.backgroundImage}>
@@ -43,7 +41,6 @@ const styles = StyleSheet.create({
     height:hp(18),
     width:wp(70),
     marginHorizontal:wp(5),
-    // backgroundColor:'red'
   },
   backgroundImage:{
     flex:1,
@@ -54,10 +51,9 @@ const styles = StyleSheet.create({
   },
   headingContainer:{
     height: hp(3.5),
-    // borderWidth:0.19,
     justifyContent: 'center',
     alignItems: 'center',
-    width: wp(30),
+    width: wp(35),
     borderRadius: wp(1),
     backgroundColor: "#FF5733",
     flexDirection:'row'
@@ -69,7 +65,7 @@ const styles = StyleSheet.create({
   },
   details:{
     marginTop:hp(3),
-    // fontWeight:'bold'
+    fontWeight:'bold',
     fontSize:16
   },
   buyNow:{
